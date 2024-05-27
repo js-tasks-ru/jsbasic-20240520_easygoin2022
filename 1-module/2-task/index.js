@@ -10,7 +10,19 @@ function print(text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid(name) {
-  // ваш код...
+  switch(true){
+    case name == null:
+        return false;
+        break;
+    case name.includes(' '):
+        return false;
+        break;
+    case name.length < 4:
+        return false;
+        break;
+    default:
+        return true;
+  }
 }
 
 function sayHello() {
