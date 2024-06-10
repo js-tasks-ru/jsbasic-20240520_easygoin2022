@@ -2,8 +2,9 @@ function initCarousel() {
   const buttonLeft = document.querySelector('.carousel__arrow_left');
   const buttonRight = document.querySelector('.carousel__arrow_right');
   const carouselInner = document.querySelector('.carousel__inner');
-  let step = 988;
+  let step = carouselInner.offsetWidth;
   let currentPosition = 0;
+
 
   buttonLeft.style.display = 'none';
 
