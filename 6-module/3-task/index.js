@@ -1,5 +1,6 @@
 import createElement from '../../assets/lib/create-element.js';
 
+
 export default class Carousel {
   constructor(slides) {
     this.slides = slides;
@@ -49,19 +50,19 @@ export default class Carousel {
     }
   }
 
-  initSlider = (offsetWidth) => {
+  initSlider = () => {
     
-    let step = offsetWidth;
-    let currentPosition = 0;
 
     const buttonLeft = this.elem.querySelector('.carousel__arrow_left');
     const buttonRight = this.elem.querySelector('.carousel__arrow_right');
     const carouselInner = this.elem.querySelector('.carousel__inner');
      
-    
+    let currentPosition = 0;
     buttonLeft.style.display = 'none';
   
     buttonRight.addEventListener('click', () => {
+
+      let step = carouselInner.offsetWidth;
   
       buttonLeft.style.display = '';
   
@@ -77,6 +78,8 @@ export default class Carousel {
     });
   
     buttonLeft.addEventListener('click', () => {
+
+      let step = carouselInner.offsetWidth;
       
       buttonRight.style.display = '';
       
@@ -96,6 +99,8 @@ export default class Carousel {
   render() {
     
     this.elem = createElement(this.template());
+
+    this.initSlider();
 
     this.btnOnCLick();
    
